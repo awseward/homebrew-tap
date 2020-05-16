@@ -8,11 +8,6 @@ class CheckZoom < Formula
 
   def install
     bin.install "check_zoom"
-
-    print "What user [D,N]? "
-    $stdout.flush
-    call_status_user = gets.chomp
-    puts "User is: #{call_status_user}"
   end
 
   def plist
@@ -36,34 +31,22 @@ class CheckZoom < Formula
             <key>PATH</key>
             <string>#{bin}:/usr/bin:/bin:/usr/sbin:/sbin:</string>
 
-            <key>CALL_STATUS_USER</key>
-            <string>__FIXME_CALL_STATUS_USER__</string>
+            <key>CONFIG_FILEPATH</key>
+            <string>#{etc}/#{name}/conf.json</string>
 
-            <key>DATABASE_FILEPATH</key>
-            <string>__FIXME_DATABASE_FILEPATH__</string>
-
+            <string>
       <!--
             <key>LOG_LEVEL</key>
             <string>DEBUG</string>
       -->
-
           </dict>
           <key>StandardOutPath</key>
-          <string>/tmp/log/local.call_status/watch.log</string>
+          <string>/tmp/log/#{name}/watch.log</string>
           <key>StandardErrorPath</key>
-          <string>/tmp/log/local.call_status/watch.log</string>
+          <string>/tmp/log/#{name}/watch.log</string>
         </dict>
       </plist>
     XML
-  end
-
-
-  def caveats
-    <<~TXT
-      Hello this is a caveats test
-
-      When does this get displayed?
-    TXT
   end
 
   test do
