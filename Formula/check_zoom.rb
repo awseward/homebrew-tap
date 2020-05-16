@@ -18,10 +18,11 @@ class CheckZoom < Formula
         <dict>
           <key>Label</key>
           <string>#{plist_name}</string>
-          <key>Program</key>
-          <string>#{bin}/check_zoom</string>
+          <!-- <key>Program</key>
+          <string>#{bin}/check_zoom</string> -->
           <key>ProgramArguments</key>
           <array>
+            <string>/usr/local/bin/check_zoom</string>
             <string>--help</string>
           </array>
           <key>RunAtLoad</key>
