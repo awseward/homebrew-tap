@@ -22,7 +22,6 @@ class CallStatusChecker < Formula
         <dict>
           <key>Label</key>
           <string>#{plist_name}</string>
-          <key>Program</key>
           <key>ProgramArguments</key>
           <array>
             <string>/usr/local/bin/#{bin_filename}</string>
