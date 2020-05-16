@@ -45,10 +45,10 @@ class CheckZoom < Formula
             <key>CONFIG_FILEPATH</key>
             <string>#{etc}/#{name}/config.json</string>
 
-      <!--
-            <key>LOG_LEVEL</key>
-            <string>DEBUG</string>
-      -->
+            <!--
+              <key>LOG_LEVEL</key>
+              <string>DEBUG</string>
+            -->
           </dict>
           <key>StandardOutPath</key>
           <string>/tmp/log/#{name}/watch.log</string>
