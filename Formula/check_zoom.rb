@@ -7,7 +7,11 @@ class CheckZoom < Formula
   bottle :unneeded
 
   def install
-    bin.install "check_zoom"
+    bin.install bin_filename
+  end
+
+  def bin_filename
+    "check_zoom"
   end
 
   def plist
@@ -18,13 +22,15 @@ class CheckZoom < Formula
         <dict>
           <key>Label</key>
           <string>#{plist_name}</string>
-          <!-- <key>Program</key>
-          <string>#{bin}/check_zoom</string> -->
-          <key>ProgramArguments</key>
-          <array>
-            <string>/usr/local/bin/check_zoom</string>
-            <string>--help</string>
-          </array>
+          <key>Program</key>
+          <string>/usr/local/bin/#{bin_filename}</string>
+          <!--
+            <key>ProgramArguments</key>
+            <array>
+              <string>/usr/local/bin/#{bin_filename}</string>
+              <string>--help</string>
+            </array>
+          -->
           <key>RunAtLoad</key>
           <true/>
           <key>KeepAlive</key>
@@ -54,7 +60,7 @@ class CheckZoom < Formula
   end
 
   test do
-    system "#{bin}/check_zoom", "--version"
-    system "#{bin}/check_zoom", "--revision"
+    system "/usr/local/bin/#{bin_filename}", "--version"
+    system "/usr/local/bin/#{bin_filename}", "--revision"
   end
 end
