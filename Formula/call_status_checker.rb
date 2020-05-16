@@ -1,8 +1,8 @@
-class CheckZoom < Formula
-  desc     "Checks zoom to update call status"
+class CallStatusChecker < Formula
+  desc     "Checks Zoom to update call status"
   homepage "https://github.com/awseward/call_status"
-  url      "https://github.com/awseward/call_status/releases/download/0.2.1/check_zoom-0.2.1.tar.gz"
-  sha256   "241b0f2586350d82f38a3d3a8f23fedb7c8e45cadd63123369d23e3ac0a7e6d1"
+  url      "https://github.com/awseward/call_status/releases/download/0.2.1/call_status_checker-0.2.1.tar.gz"
+  sha256   "968b89dfd60f17243136f67a83d5b33b9e2fba75649cc483abe45e09a8fca844"
 
   bottle :unneeded
 
@@ -11,7 +11,7 @@ class CheckZoom < Formula
   end
 
   def bin_filename
-    "check_zoom"
+    "call_status_checker"
   end
 
   def plist
