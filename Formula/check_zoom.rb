@@ -10,6 +10,14 @@ class CheckZoom < Formula
     bin.install "check_zoom"
   end
 
+  def caveats
+    <<~CAV
+      Hello this is a caveats test
+
+      When does this get displayed?
+    CAV
+  end
+
   test do
     system "#{bin}/check_zoom", "--version"
   end
