@@ -34,7 +34,7 @@ class CheckZoom < Formula
           <key>EnvironmentVariables</key>
           <dict>
             <key>PATH</key>
-            <string>#{bin}:/usr/bin:/bin:/usr/sbin:/sbin:</string>
+            <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:</string>
 
             <key>CONFIG_FILEPATH</key>
             <string>#{etc}/#{name}/config.json</string>
