@@ -20,6 +20,10 @@ class CheckZoom < Formula
           <string>#{plist_name}</string>
           <key>Program</key>
           <string>#{bin}/check_zoom</string>
+          <key>ProgramArguments</key>
+          <array>
+            <string>--help</string>
+          </array>
           <key>RunAtLoad</key>
           <true/>
           <key>KeepAlive</key>
