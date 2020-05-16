@@ -7,11 +7,29 @@ class CallStatusChecker < Formula
   bottle :unneeded
 
   def install
+    system "mkdir -p \"#{etc_subdirpath}\""
+    system "mkdir -p \"#{var_subdirpath}\""
     bin.install bin_filename
   end
 
   def bin_filename
     "call_status_checker"
+  end
+
+  def database_filename
+    "#{name}.db"
+  end
+
+  def config_filename
+    'config.json'
+  end
+
+  def var_subdirpath
+    File.join var, name
+  end
+
+  def etc_subdirpath
+    File.join etc, name
   end
 
   def plist
@@ -39,10 +57,10 @@ class CallStatusChecker < Formula
             <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:</string>
 
             <key>CONFIG_FILEPATH</key>
-            <string>#{etc}/#{name}/config.json</string>
+            <string>#{File.join etc_subdirpath, config_filename}</string>
 
             <key>DATABASE_FILEPATH</key>
-            <string>#{var}/#{name}/#{name}.db</string>
+            <string>#{File.join var_subdirpath, database_filename}</string>
 
             <!--
               <key>LOG_LEVEL</key>
