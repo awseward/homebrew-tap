@@ -41,6 +41,9 @@ class CallStatusChecker < Formula
             <key>CONFIG_FILEPATH</key>
             <string>#{etc}/#{name}/config.json</string>
 
+            <key>DATABASE_FILEPATH</key>
+            <string>#{var}/#{name}/#{name}.db</string>
+
             <!--
               <key>LOG_LEVEL</key>
               <string>DEBUG</string>
