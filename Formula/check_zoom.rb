@@ -32,9 +32,8 @@ class CheckZoom < Formula
             <string>#{bin}:/usr/bin:/bin:/usr/sbin:/sbin:</string>
 
             <key>CONFIG_FILEPATH</key>
-            <string>#{etc}/#{name}/conf.json</string>
+            <string>#{etc}/#{name}/config.json</string>
 
-            <string>
       <!--
             <key>LOG_LEVEL</key>
             <string>DEBUG</string>
