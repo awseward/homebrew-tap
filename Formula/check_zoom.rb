@@ -10,12 +10,55 @@ class CheckZoom < Formula
     bin.install "check_zoom"
   end
 
+  def plist
+    <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+        <dict>
+          <key>Label</key>
+          <string>#{plist_name}</string>
+          <key>Program</key>
+          <string>#{bin}/nonsense_test</string>
+          <key>RunAtLoad</key>
+          <true/>
+          <key>KeepAlive</key>
+          <false/>
+          <key>StartInterval</key>
+          <integer>10</integer>
+          <key>EnvironmentVariables</key>
+          <dict>
+            <key>PATH</key>
+            <string>#{bin}:/usr/bin:/bin:/usr/sbin:/sbin:</string>
+
+            <key>CALL_STATUS_USER</key>
+            <string>__CALL_STATUS_USER__</string>
+
+            <key>DATABASE_FILEPATH</key>
+            <string>__DATABASE_FILEPATH__</string>
+
+      <!--
+            <key>LOG_LEVEL</key>
+            <string>DEBUG</string>
+      -->
+
+          </dict>
+          <key>StandardOutPath</key>
+          <string>/tmp/log/local.call_status/watch.log</string>
+          <key>StandardErrorPath</key>
+          <string>/tmp/log/local.call_status/watch.log</string>
+        </dict>
+      </plist>
+    XML
+  end
+
+
   def caveats
-    <<~CAV
+    <<~TXT
       Hello this is a caveats test
 
       When does this get displayed?
-    CAV
+    TXT
   end
 
   test do
