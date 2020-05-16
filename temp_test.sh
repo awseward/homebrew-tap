@@ -2,12 +2,21 @@
 
 set -euo pipefail
 
-_brew_do() {
+hb_tap="awseward/homebrew-tap"
+hb_formula="${hb_tap}/call_status_checker"
+
+_tap_do() {
   # shellcheck disable=SC2068
-  echo 'awseward/tap/call_status_checker' | xargs -t brew $@
+  echo "${hb_tap}" | xargs -t brew $@
 }
 
-_brew_do services stop
-_brew_do uninstall
-_brew_do install
-_brew_do services start
+_formula_do() {
+  # shellcheck disable=SC2068
+  echo "${hb_formula}" | xargs -t brew $@
+}
+
+_formula_do services stop
+_formula_do uninstall
+_tap_do  untap
+_formula_do install
+_formula_do services start
