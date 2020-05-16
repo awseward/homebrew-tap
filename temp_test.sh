@@ -4,7 +4,7 @@ set -euo pipefail
 
 _brew_do() {
   # shellcheck disable=SC2068
-  echo 'awseward/tap/check_zoom' | xargs -t brew $@
+  echo 'awseward/tap/call_status_checker' | xargs -t brew $@
 }
 
 _brew_do services stop

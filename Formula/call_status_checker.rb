@@ -23,14 +23,11 @@ class CallStatusChecker < Formula
           <key>Label</key>
           <string>#{plist_name}</string>
           <key>Program</key>
-          <string>/usr/local/bin/#{bin_filename}</string>
-          <!--
-            <key>ProgramArguments</key>
-            <array>
-              <string>/usr/local/bin/#{bin_filename}</string>
-              <string>--help</string>
-            </array>
-          -->
+          <key>ProgramArguments</key>
+          <array>
+            <string>/usr/local/bin/#{bin_filename}</string>
+            <string>check</string>
+          </array>
           <key>RunAtLoad</key>
           <true/>
           <key>KeepAlive</key>
