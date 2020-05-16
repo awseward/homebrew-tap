@@ -50,5 +50,6 @@ class CheckZoom < Formula
 
   test do
     system "#{bin}/check_zoom", "--version"
+    system "#{bin}/check_zoom", "--revision"
   end
 end
