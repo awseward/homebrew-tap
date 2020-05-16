@@ -19,7 +19,7 @@ class CheckZoom < Formula
           <key>Label</key>
           <string>#{plist_name}</string>
           <key>Program</key>
-          <string>#{bin}/nonsense_test</string>
+          <string>#{bin}/check_zoom</string>
           <key>RunAtLoad</key>
           <true/>
           <key>KeepAlive</key>
