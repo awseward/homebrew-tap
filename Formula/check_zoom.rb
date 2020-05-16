@@ -8,6 +8,11 @@ class CheckZoom < Formula
 
   def install
     bin.install "check_zoom"
+
+    print "What user [D,N]? "
+    $stdout.flush
+    call_status_user = gets.chomp
+    puts "User is: #{call_status_user}"
   end
 
   def plist
@@ -32,10 +37,10 @@ class CheckZoom < Formula
             <string>#{bin}:/usr/bin:/bin:/usr/sbin:/sbin:</string>
 
             <key>CALL_STATUS_USER</key>
-            <string>__CALL_STATUS_USER__</string>
+            <string>__FIXME_CALL_STATUS_USER__</string>
 
             <key>DATABASE_FILEPATH</key>
-            <string>__DATABASE_FILEPATH__</string>
+            <string>__FIXME_DATABASE_FILEPATH__</string>
 
       <!--
             <key>LOG_LEVEL</key>
