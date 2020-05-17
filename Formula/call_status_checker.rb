@@ -24,6 +24,10 @@ class CallStatusChecker < Formula
     'config.json'
   end
 
+  def log_filepath
+    "/tmp/log/#{name}/watch.log"
+  end
+
   def var_subdirpath
     File.join var, name
   end
@@ -68,12 +72,29 @@ class CallStatusChecker < Formula
             -->
           </dict>
           <key>StandardOutPath</key>
-          <string>/tmp/log/#{name}/watch.log</string>
+          <string>#{log_filepath}</string>
           <key>StandardErrorPath</key>
-          <string>/tmp/log/#{name}/watch.log</string>
+          <string>#{log_filepath}</string>
         </dict>
       </plist>
     XML
+  end
+
+  def caveats
+    <<~MSG
+
+      To tail logs, run:
+
+        tail -f #{log_filepath}
+
+      ---
+
+      If this is your first time installing this, the application won't know
+      who you are until you identify yourself. Do so by running:
+
+        #{bin_filename} config -u <your_username>
+
+    MSG
   end
 
   test do
