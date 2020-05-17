@@ -15,6 +15,10 @@ __formula_do() {
   echo "${hb_formula}" | xargs -t brew $@
 }
 
+_info() {
+  __formula_do info
+}
+
 _down() {
   __formula_do services stop
   __formula_do uninstall
