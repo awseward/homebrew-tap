@@ -1,8 +1,8 @@
 class CallStatusChecker < Formula
   desc     "Checks Zoom to update call status"
   homepage "https://github.com/awseward/call_status"
-  url      "https://github.com/awseward/call_status/releases/download/0.3.1/call_status_checker-0.3.1.tar.gz"
-  sha256   "6203e6a5a90d821c13e8dc48384572dd05b999306d0e801359bd175ee7621ddf"
+  url "https://github.com/awseward/call_status/releases/download/0.3.2/call_status_checker-0.3.2.tar.gz"
+  sha256 "dcdd06dd724ccb6668c1ffb1a08b2a434c7e43944a3bd4977bcfc3ee4a4ddb0a"
 
   bottle :unneeded
 
