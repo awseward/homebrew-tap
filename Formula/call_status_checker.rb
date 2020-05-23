@@ -9,6 +9,7 @@ class CallStatusChecker < Formula
   def install
     system "mkdir -p \"#{etc_subdirpath}\""
     system "mkdir -p \"#{var_subdirpath}\""
+    system "mkdir -p \"#{log_subdirpath}\""
     bin.install bin_filename
   end
 
@@ -25,7 +26,7 @@ class CallStatusChecker < Formula
   end
 
   def log_filepath
-    "/tmp/log/#{name}/watch.log"
+    File.join log_subdirpath, 'watch.log'
   end
 
   def var_subdirpath
@@ -34,6 +35,10 @@ class CallStatusChecker < Formula
 
   def etc_subdirpath
     File.join etc, name
+  end
+
+  def log_subdirpath
+    File.join '/tmp/log', name
   end
 
   def plist
