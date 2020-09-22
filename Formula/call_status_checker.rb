@@ -38,7 +38,7 @@ class CallStatusChecker < Formula
   end
 
   def log_subdirpath
-    File.join '/tmp/log', name
+    File.join '/usr/local/var/log/', name
   end
 
   def plist
