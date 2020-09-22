@@ -38,7 +38,7 @@ class CallStatusChecker < Formula
   end
 
   def log_subdirpath
-    File.join '/tmp/log', name
+    File.join '/usr/local/var/log/', name
   end
 
   def plist
@@ -85,6 +85,13 @@ class CallStatusChecker < Formula
     XML
   end
 
+  test do
+    bin_full_path = "/usr/local/bin/#{bin_filename}"
+
+    system bin_full_path, "--version"
+    system bin_full_path, "--revision"
+  end
+
   def caveats
     <<~MSG
 
@@ -100,10 +107,5 @@ class CallStatusChecker < Formula
         #{bin_filename} config -u <your_username>
 
     MSG
-  end
-
-  test do
-    system "/usr/local/bin/#{bin_filename}", "--version"
-    system "/usr/local/bin/#{bin_filename}", "--revision"
   end
 end
