@@ -32,9 +32,9 @@ class GitEventsCollector < Formula
 
   def shell_bin
     %w[
-      rotate.sh
-      to_sqlite.sh
-      push.sh
+      gec_rotate
+      gec_tsv-to-sqlite
+      gec_push
     ]
   end
 end
