@@ -1,4 +1,4 @@
-class CallStatusChecker < Formula
+class GitEventsCollector < Formula
   desc     "TODO"
   homepage "https://github.com/awseward/git_events_collector"
   url "https://github.com/awseward/git-events-collector/releases/download/0.0.1/git_events_collector-0.0.1.tar.gz"
