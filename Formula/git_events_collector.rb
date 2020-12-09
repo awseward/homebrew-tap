@@ -1,8 +1,8 @@
 class GitEventsCollector < Formula
   desc     "TODO"
   homepage "https://github.com/awseward/git_events_collector"
-  url "https://github.com/awseward/git-events-collector/releases/download/0.0.1/git_events_collector-0.0.1.tar.gz"
-  sha256 "485d5433e1c9a6781275b6a595227618739a5a0597a72f17e2193beebf402fec"
+  url "https://github.com/awseward/git-events-collector/releases/download/0.0.2/git_events_collector-0.0.2.tar.gz"
+  sha256 "68ebb8e2a61aad2bdd57e7a81da1da1cd4f83c3b07b073e302722878328fbe74"
 
   bottle :unneeded
 
