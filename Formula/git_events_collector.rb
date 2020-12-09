@@ -35,6 +35,7 @@ class GitEventsCollector < Formula
       gec_rotate
       gec_tsv-to-sqlite
       gec_push
+      gec_run
     ]
   end
 end
