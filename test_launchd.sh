@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
+# Usage: test_launchd.sh <formula_name> [command]
+#
+# where command: info|down|up|bounce
+#
+
 set -euo pipefail
 
 hb_tap="awseward/homebrew-tap"
-hb_formula="${hb_tap}/call_status_checker"
+hb_formula="${hb_tap}/$1"
 
 __tap_do() {
   # shellcheck disable=SC2068
@@ -35,4 +40,4 @@ _bounce() {
   _up
 }
 
-"_${1:-up}"
+"_${2:-up}"

@@ -17,6 +17,58 @@ class GitEventsCollector < Formula
     system bin_full_path, '--revision'
   end
 
+  def plist
+    <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+        <dict>
+          <key>Label</key>
+          <string>#{plist_name}</string>
+
+          <key>ProgramArguments</key>
+          <array>
+            <string>/usr/local/bin/gec_run</string>
+          </array>
+
+          <key>RunAtLoad</key>
+          <true/>
+
+          <key>KeepAlive</key>
+          <false/>
+
+          <key>StartInterval</key>
+          <integer>14400</integer> <!-- 4 hours -->
+
+          <key>EnvironmentVariables</key>
+          <dict>
+            <key>PATH</key>
+            <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:</string>
+
+            <key>DW_INGEST_URL</key>
+            <string>https://seward-datawarehouse.herokuapp.com</string>
+          </dict>
+
+          <key>StandardOutPath</key>
+          <string>/tmp/log/gec_run.log</string>
+
+          <key>StandardErrorPath</key>
+          <string>/tmp/log/gec_run.log</string>
+        </dict>
+      </plist>
+    XML
+  end
+
+  def  caveats
+    <<~CVTS
+    You'll need tardigrade.io/storj's CLI, uplink. You can set that up here by
+    following the instructions here:
+
+      https://documentation.tardigrade.io/getting-started/uploading-your-first-object/set-up-uplink-cli
+
+    CVTS
+  end
+
   private
 
   def all_bin
