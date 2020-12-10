@@ -43,7 +43,7 @@ class GitEventsCollector < Formula
           <key>EnvironmentVariables</key>
           <dict>
             <key>PATH</key>
-            <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:</string>
+            <string>/run/current-system/sw/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:</string>
 
             <key>DW_INGEST_URL</key>
             <string>https://seward-datawarehouse.herokuapp.com</string>
