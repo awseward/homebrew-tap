@@ -38,7 +38,7 @@ class GitEventsCollector < Formula
           <false/>
 
           <key>StartInterval</key>
-          <integer>14400</integer> <!-- 4 hours -->
+          <integer>7200</integer> <!-- Runs every 2 hours -->
 
           <key>EnvironmentVariables</key>
           <dict>
