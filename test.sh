@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Usage: test_launchd.sh <formula_name> [command]
+# Usage: test.sh <formula_name> [command]
 #
 # where command: info|down|up|bounce
 #
