@@ -1,8 +1,8 @@
 class GitEventsCollector < Formula
   desc     'TODO'
   homepage 'https://github.com/awseward/git_events_collector'
-  url 'https://github.com/awseward/git-events-collector/releases/download/0.1.0/git_events_collector-0.1.0.tar.gz'
-  sha256 '65c19308edb0e63421bae7636ac487e6abf591503586586879b8b45710026e0b'
+  url      'https://github.com/awseward/git-events-collector/releases/download/0.1.0/git_events_collector-0.1.0.tar.gz'
+  sha256   '65c19308edb0e63421bae7636ac487e6abf591503586586879b8b45710026e0b'
 
   bottle :unneeded
 
@@ -61,7 +61,7 @@ class GitEventsCollector < Formula
 
   def  caveats
     <<~CVTS
-    You'll need tardigrade.io/storj's CLI, uplink. You can set that up here by
+    You will need the tardigrade.io CLI, uplink. You can set that up here by
     following the instructions here:
 
       https://documentation.tardigrade.io/getting-started/uploading-your-first-object/set-up-uplink-cli

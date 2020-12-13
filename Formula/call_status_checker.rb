@@ -1,44 +1,24 @@
 class CallStatusChecker < Formula
-  desc     "Checks Zoom to update call status"
-  homepage "https://github.com/awseward/call_status"
-  url "https://github.com/awseward/call_status/releases/download/0.4.0/call_status_checker-0.4.0.tar.gz"
-  sha256 "df03a2c7be3bc7f2030b7eb9a51f3066c50e489e194b9d493e4f9d0cabbc2ff8"
+  desc     'Checks Zoom to update call status'
+  homepage 'https://github.com/awseward/call_status'
+  url      'https://github.com/awseward/call_status/releases/download/0.4.0/call_status_checker-0.4.0.tar.gz'
+  sha256   'df03a2c7be3bc7f2030b7eb9a51f3066c50e489e194b9d493e4f9d0cabbc2ff8'
 
   bottle :unneeded
 
   def install
-    system "mkdir -p \"#{etc_subdirpath}\""
-    system "mkdir -p \"#{var_subdirpath}\""
-    system "mkdir -p \"#{log_subdirpath}\""
+    [
+      etc_subdirpath,
+      var_subdirpath,
+      log_subdirpath,
+    ].each { |dir| system "mkdir -p \"#{dir}\"" }
+
     bin.install bin_filename
   end
 
-  def bin_filename
-    "call_status_checker"
-  end
-
-  def database_filename
-    "#{name}.db"
-  end
-
-  def config_filename
-    'config.json'
-  end
-
-  def log_filepath
-    File.join log_subdirpath, 'watch.log'
-  end
-
-  def var_subdirpath
-    File.join var, name
-  end
-
-  def etc_subdirpath
-    File.join etc, name
-  end
-
-  def log_subdirpath
-    File.join '/usr/local/var/log/', name
+  test do
+    system bin_abs_path, '--version'
+    system bin_abs_path, '--revision'
   end
 
   def plist
@@ -51,7 +31,7 @@ class CallStatusChecker < Formula
           <string>#{plist_name}</string>
           <key>ProgramArguments</key>
           <array>
-            <string>/usr/local/bin/#{bin_filename}</string>
+            <string>#{bin_abs_path}</string>
             <string>check</string>
           </array>
           <key>RunAtLoad</key>
@@ -85,13 +65,6 @@ class CallStatusChecker < Formula
     XML
   end
 
-  test do
-    bin_full_path = "/usr/local/bin/#{bin_filename}"
-
-    system bin_full_path, "--version"
-    system bin_full_path, "--revision"
-  end
-
   def caveats
     <<~MSG
 
@@ -101,11 +74,45 @@ class CallStatusChecker < Formula
 
       ---
 
-      If this is your first time installing this, the application won't know
+      If this is your first time installing this, the application will not know
       who you are until you identify yourself. Do so by running:
 
         #{bin_filename} config -u <your_username>
 
     MSG
+  end
+
+  private
+
+  def bin_filename
+    "call_status_checker"
+  end
+
+  def bin_abs_path
+    "/usr/local/bin/#{bin_filename}"
+  end
+
+  def database_filename
+    "#{name}.db"
+  end
+
+  def config_filename
+    'config.json'
+  end
+
+  def log_filepath
+    File.join log_subdirpath, 'watch.log'
+  end
+
+  def var_subdirpath
+    File.join var, name
+  end
+
+  def etc_subdirpath
+    File.join etc, name
+  end
+
+  def log_subdirpath
+    File.join '/usr/local/var/log/', name
   end
 end
