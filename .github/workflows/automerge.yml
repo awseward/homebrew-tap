@@ -21,6 +21,9 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/labeler@main
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: automerge
         uses: "pascalgn/automerge-action@v0.12.0"
         env:
