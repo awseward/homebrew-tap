@@ -1,5 +1,6 @@
 automerge:
   # Add 'automerge' label to any and all PRs
+  - ./*
   - ./**/*
   # I think this is necessary in some cases due to the way minimatch treats
   # directories whose names start with `.` -- I don't love it, but ¯\_(ツ)_/¯
