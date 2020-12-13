@@ -1,2 +1,3 @@
 automerge:
-  - *
+  # Add 'automerge' label to any and all PRs
+  - ./**/*
