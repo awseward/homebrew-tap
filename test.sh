@@ -2,7 +2,7 @@
 
 # Usage: test.sh <formula_name> [command]
 #
-# where command: info|down|up|bounce
+# where command is any of info|down|up|bounce
 #
 
 set -euo pipefail
