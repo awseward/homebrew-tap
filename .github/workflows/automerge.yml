@@ -21,6 +21,10 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
+      - name: add-automerge-label
+        uses: ActionsRML/add-labels-to-issue@v1.2
+        with:
+          labels: automerge
       - name: automerge
         uses: "pascalgn/automerge-action@v0.12.0"
         env:
