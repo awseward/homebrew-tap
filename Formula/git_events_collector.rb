@@ -5,6 +5,7 @@ class GitEventsCollector < Formula
   sha256 '5e246a9a737794ea5f78719ac7cd05ff2993d35e0a215a153b6494f470e3fbb7'
 
   bottle :unneeded
+  depends_on 'dw_misc'
 
   def install
     all_bin.each { |f| bin.install f }
