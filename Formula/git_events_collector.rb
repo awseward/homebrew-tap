@@ -87,7 +87,6 @@ class GitEventsCollector < Formula
     %w[
       gec_rotate
       gec_tsv-to-sqlite
-      gec_push
       gec_run
     ]
   end
