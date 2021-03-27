@@ -45,9 +45,6 @@ class CallStatusChecker < Formula
             <key>PATH</key>
             <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:</string>
 
-            <key>CONFIG_FILEPATH</key>
-            <string>#{File.join etc_subdirpath, config_filename}</string>
-
             <key>DATABASE_FILEPATH</key>
             <string>#{File.join var_subdirpath, database_filename}</string>
 
@@ -94,10 +91,6 @@ class CallStatusChecker < Formula
 
   def database_filename
     "#{name}.db"
-  end
-
-  def config_filename
-    'config.json'
   end
 
   def log_filepath
