@@ -7,10 +7,7 @@ class CallStatusChecker < Formula
   bottle :unneeded
 
   def install
-    [
-      log_subdirpath,
-    ].each { |dir| system "mkdir -p \"#{dir}\"" }
-
+    log_subdirpath.mkpath
     bin.install bin_filename
   end
 
@@ -77,11 +74,11 @@ class CallStatusChecker < Formula
   private
 
   def bin_filename
-    "call_status_checker"
+    'call_status_checker'
   end
 
   def bin_abs_path
-    "/usr/local/bin/#{bin_filename}"
+    File.join HOMEBREW_PREFIX, 'bin', bin_filename
   end
 
   def log_filepath
@@ -89,6 +86,6 @@ class CallStatusChecker < Formula
   end
 
   def log_subdirpath
-    File.join '/usr/local/var/log/', name
+    var + "log/#{name}"
   end
 end
