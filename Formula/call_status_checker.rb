@@ -8,8 +8,6 @@ class CallStatusChecker < Formula
 
   def install
     [
-      etc_subdirpath,
-      var_subdirpath,
       log_subdirpath,
     ].each { |dir| system "mkdir -p \"#{dir}\"" }
 
@@ -44,9 +42,6 @@ class CallStatusChecker < Formula
           <dict>
             <key>PATH</key>
             <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:</string>
-
-            <key>DATABASE_FILEPATH</key>
-            <string>#{File.join var_subdirpath, database_filename}</string>
 
             <!--
               <key>LOG_LEVEL</key>
@@ -89,20 +84,8 @@ class CallStatusChecker < Formula
     "/usr/local/bin/#{bin_filename}"
   end
 
-  def database_filename
-    "#{name}.db"
-  end
-
   def log_filepath
     File.join log_subdirpath, 'watch.log'
-  end
-
-  def var_subdirpath
-    File.join var, name
-  end
-
-  def etc_subdirpath
-    File.join etc, name
   end
 
   def log_subdirpath
