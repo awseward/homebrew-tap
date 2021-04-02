@@ -85,9 +85,11 @@ class GitEventsCollector < Formula
 
   def shell_bin
     %w[
+      gec_path_active
+      gec_path_data_dir
       gec_rotate
-      gec_tsv-to-sqlite
       gec_run
+      gec_tsv-to-sqlite
     ]
   end
 end
