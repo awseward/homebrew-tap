@@ -74,7 +74,7 @@ class GitEventsCollector < Formula
 
   private
 
-  def every_two_hours(hours: [0,2,4,6,8,10], minute: 15, pad_left: 6)
+  def every_two_hours(hours: [0,2,4,6,8,10,12,14,16,18,20,22], minute: 15, pad_left: 6)
     dicts = hours.map do |hour|
       <<~PDICT
         <dict>
