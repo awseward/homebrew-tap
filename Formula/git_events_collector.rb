@@ -39,7 +39,9 @@ class GitEventsCollector < Formula
           <false/>
 
           <key>StartCalendarInterval</key>
-          #{every_two_hours}
+          <array>
+            #{every_two_hours}
+          </array>
 
           <key>EnvironmentVariables</key>
           <dict>
@@ -72,23 +74,24 @@ class GitEventsCollector < Formula
 
   private
 
-  def every_two_hours(minute: 15)
-    dicts = [0, 2, 4, 6, 8, 10].map do |hour|
+  def every_two_hours(hours: [0,2,4,6,8,10], minute: 15, pad_left: 6)
+    dicts = hours.map do |hour|
       <<~PDICT
         <dict>
-            <key>Hour</key>
-            <integer>#{hour}</integer>
-            <key>Minute</key>
-            <integer>#{minute}</integer>
+          <key>Hour</key>
+          <integer>#{hour}</integer>
+          <key>Minute</key>
+          <integer>#{minute}</integer>
         </dict>
       PDICT
     end
 
-    <<~PARR
-      <array>
-        #{dicts.join "\n"}
-      </array>
-    PARR
+    l1, *lrest = dicts.flat_map(&:lines).map(&:rstrip)
+
+    [
+      l1,
+      *(lrest.map { |str| "#{' ' * pad_left}#{str}" })
+    ].join "\n"
   end
 
   def all_bin
