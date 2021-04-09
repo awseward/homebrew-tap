@@ -2,7 +2,7 @@ class DwMisc < Formula
   desc     'TODO'
   homepage 'https://github.com/awseward/dw-misc'
   url      'https://github.com/awseward/dw-misc/archive/0.0.2.tar.gz'
-  sha256   'b6d09594189eed7b080322f999dbd12c7b2cd10d878cd619ee7c8df9a4a1126b'
+  sha256   '68ed3d6bca107361df6d5f20b75d9dcc0bc64b1a81a5a9dcef349f0097227af8'
 
   bottle :unneeded
 
