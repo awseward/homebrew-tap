@@ -86,11 +86,11 @@ class GitEventsCollector < Formula
       PDICT
     end
 
-    l1, *lrest = dicts.flat_map(&:lines).map(&:rstrip)
+    line_1, *lines_rest = dicts.flat_map(&:lines).map(&:rstrip)
 
     [
-      l1,
-      *(lrest.map { |str| "#{' ' * pad_left}#{str}" })
+      line_1,
+      *( lines_rest.map { |str| ' ' * pad_left + str } )
     ].join "\n"
   end
 
