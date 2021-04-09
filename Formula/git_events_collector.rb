@@ -1,5 +1,5 @@
 class GitEventsCollector < Formula
-  desc     'TODO'
+  desc 'Collects accumulated git events'
   homepage 'https://github.com/awseward/git_events_collector'
   url 'https://github.com/awseward/git-events-collector/releases/download/0.2.9/git_events_collector-0.2.9.tar.gz'
   sha256 '8ff0a04331fb5b5a2b2e741a68ec1255e07d934e0335283958673508d255ea0c'
