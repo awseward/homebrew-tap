@@ -86,7 +86,7 @@ class GitEventsCollector < Formula
 
     <<~PARR
       <array>
-        #{dicts}
+        #{dicts.join "\n"}
       </array>
     PARR
   end
