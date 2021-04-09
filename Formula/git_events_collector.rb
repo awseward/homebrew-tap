@@ -38,8 +38,8 @@ class GitEventsCollector < Formula
           <key>KeepAlive</key>
           <false/>
 
-          <key>StartInterval</key>
-          <integer>7200</integer> <!-- Runs every 2 hours -->
+          <key>StartCalendarInterval</key>
+          #{every_two_hours}
 
           <key>EnvironmentVariables</key>
           <dict>
@@ -71,6 +71,25 @@ class GitEventsCollector < Formula
   end
 
   private
+
+  def every_two_hours(minute: 15)
+    dicts = [0, 2, 4, 6, 8, 10].map do |hour|
+      <<~PDICT
+        <dict>
+            <key>Hour</key>
+            <integer>0</integer>
+            <key>Minute</key>
+            <integer>#{minute}</integer>
+        </dict>
+      PDICT
+    end
+
+    <<~PARR
+      <array>
+        #{dicts}
+      </array>
+    PARR
+  end
 
   def all_bin
     [
