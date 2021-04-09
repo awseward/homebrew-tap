@@ -77,7 +77,7 @@ class GitEventsCollector < Formula
       <<~PDICT
         <dict>
             <key>Hour</key>
-            <integer>0</integer>
+            <integer>#{hour}</integer>
             <key>Minute</key>
             <integer>#{minute}</integer>
         </dict>
