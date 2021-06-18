@@ -1,8 +1,8 @@
 class Uq < Formula
   desc 'Like `jq`, but for URLs.'
   homepage 'https://github.com/awseward/uq'
-  url 'https://github.com/awseward/uq/releases/download/0.1.11/uq-0.1.11-macos.tar.gz'
-  sha256 '4985017e366dedfd8c75f6c79c233b8ea0fdf42cb770b039545fe199e788629f'
+  url 'https://github.com/awseward/uq/releases/download/0.1.12/uq-0.1.12-macos.tar.gz'
+  sha256 'c9edf255366ce5933f252718f96dc984db7d4d0a3694736ce21b599b0e684645'
 
   bottle :unneeded
 
