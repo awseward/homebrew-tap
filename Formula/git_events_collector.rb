@@ -4,7 +4,6 @@ class GitEventsCollector < Formula
   url 'https://github.com/awseward/git-events-collector/releases/download/0.3.2/git_events_collector-0.3.2.tar.gz'
   sha256 '6c408550c2613f279aa82c98e43c0c349984b3b2a4ab695b0599114a191e63e8'
 
-  bottle :unneeded
   depends_on 'dw_misc'
 
   def install

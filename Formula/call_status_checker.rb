@@ -4,8 +4,6 @@ class CallStatusChecker < Formula
   url 'https://github.com/awseward/call_status/releases/download/0.6.4/call_status_checker-0.6.4.tar.gz'
   sha256 '4073fccee3d8d377931360e54db2c912e3948232b7df0132a8cc6eb3853eefab'
 
-  bottle :unneeded
-
   def install
     log_subdirpath.mkpath
     bin.install bin_filename
