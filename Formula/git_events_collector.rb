@@ -1,8 +1,8 @@
 class GitEventsCollector < Formula
   desc 'Collects accumulated git events'
   homepage 'https://github.com/awseward/git_events_collector'
-  url 'https://github.com/awseward/git-events-collector/releases/download/0.4.3/git_events_collector-0.4.3.tar.gz'
-  sha256 '9cbc82d5dcf1c4d80599acc49ee38388f45a495fedf1a9c8a52c0e4858ca9820'
+  url 'https://github.com/awseward/git-events-collector/releases/download/0.4.4/git_events_collector-0.4.4.tar.gz'
+  sha256 'f604658a2a0f4f8d41a9a9f9648a68ee7a0756bc8238f17c4852ef1770482a88'
 
   depends_on 'dw_misc'
 
