@@ -106,6 +106,8 @@ class GitEventsCollector < Formula
 
   def shell_bin
     %w[
+      gec
+      gec_path
       gec_path_active
       gec_path_data_dir
       gec_rotate
