@@ -1,8 +1,8 @@
 class GitEventsCollector < Formula
   desc 'Collects accumulated git events'
   homepage 'https://github.com/awseward/git_events_collector'
-  url 'https://github.com/awseward/git-events-collector/releases/download/0.4.2/git_events_collector-0.4.2.tar.gz'
-  sha256 'c99ba37f4dd0ed6d31a86697fdf73a70e366bf3b5977a071b4c76bd59539d333'
+  url 'https://github.com/awseward/git-events-collector/releases/download/0.4.3/git_events_collector-0.4.3.tar.gz'
+  sha256 '9cbc82d5dcf1c4d80599acc49ee38388f45a495fedf1a9c8a52c0e4858ca9820'
 
   depends_on 'dw_misc'
 
@@ -106,6 +106,8 @@ class GitEventsCollector < Formula
 
   def shell_bin
     %w[
+      gec
+      gec_path
       gec_path_active
       gec_path_data_dir
       gec_rotate
