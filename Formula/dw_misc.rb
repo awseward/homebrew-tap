@@ -6,9 +6,6 @@ class DwMisc < Formula
 
   def install
     bin.install 'bin/dw'
-    bin.install 'bin/dw_push'
-    bin.install 'bin/dw_push_sqlite'
-    bin.install 'bin/dw_signal_sqlite'
   end
 
   test do
