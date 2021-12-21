@@ -28,7 +28,8 @@ class GitEventsCollector < Formula
 
           <key>ProgramArguments</key>
           <array>
-            <string>/usr/local/bin/gec_run</string>
+            <string>/usr/local/bin/gec</string>
+            <string>run</string>
           </array>
 
           <key>RunAtLoad</key>
