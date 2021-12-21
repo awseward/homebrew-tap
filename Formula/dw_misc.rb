@@ -1,8 +1,8 @@
 class DwMisc < Formula
   desc     'TODO'
   homepage 'https://github.com/awseward/dw-misc'
-  url      'https://github.com/awseward/dw-misc/archive/0.0.4.tar.gz'
-  sha256   '407f7d4cf310c972df84909a09e94de011e1473b19e9bda42c2c6b6af3fe0b33'
+  url      'https://github.com/awseward/dw-misc/archive/0.1.0.tar.gz'
+  sha256   'ade12fa89d147c08073a68a37d8a690ac27f6d5b4bf43fe6bee23214a3b62fe1'
 
   def install
     bin.install 'bin/dw'
